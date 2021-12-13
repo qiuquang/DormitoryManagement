@@ -6,6 +6,7 @@ const WIDTH = 992 // refer to Bootstrap's responsive design
 export default {
   watch: {
     $route(route) {
+      console.log(route)
       if (this.device === 'mobile' && this.sidebar.opened) {
         store.dispatch('app/closeSideBar', { withoutAnimation: false })
       }
@@ -29,7 +30,7 @@ export default {
     // https://vuejs.org/v2/style-guide/index.html#Private-property-names-essential
     $_isMobile() {
       const rect = body.getBoundingClientRect()
-      return rect.width - 1 < WIDTH
+      return rect.width - 1 < WIDTH // 根据宽度来判断是否是手机，小于992使用手机的显示模式
     },
     $_resizeHandler() {
       if (!document.hidden) {
