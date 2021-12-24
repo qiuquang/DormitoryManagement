@@ -5,7 +5,7 @@
  */
 const sysConfig = {
   devMode: false, // 是否开启开发模式
-  port: 8080,
+  port: 8090,
   pwdSaltRound: 10,
   tokenSalt: "awsl",
   tokenExp: 3600 * 24 * 14, // 14 Days 用户单次登录的时长
@@ -14,8 +14,8 @@ const sysConfig = {
 
 const databaseConfig = {
   host: "localhost",
-  user: "root",
-  password: "123456",
+  user: "qiu",
+  password: "Qiu1234.",
   name: "dormitory",
   rebuild: false, // 是否每次重启服务器时重建数据库
   logging: false // 是否再控制台输出建表语句

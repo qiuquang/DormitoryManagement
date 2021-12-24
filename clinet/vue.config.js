@@ -24,8 +24,8 @@ module.exports = {
    * In most cases please use '/' !!!
    * Detail: https://cli.vuejs.org/config/#publicpath
    */
-  publicPath: '/',
-  outputDir: '../server/static',
+  publicPath: '/my-dormitory',
+  outputDir: '../server/dormitory',
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
@@ -35,6 +35,15 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
+    },
+    proxy: {
+      '/my-dormitory': {
+        target: 'http://localhost:8090', // 本地server
+        changeOrigin: true,
+        pathRewrite: {
+          '^/my-dormitory': ''
+        }
+      }
     }
   },
   configureWebpack: {
@@ -51,7 +60,7 @@ module.exports = {
     loaderOptions: {
       sass: {
         // 根据自己样式文件的位置调整
-        data: `@import "@/styles/global-variables.scss";`
+        data: '@import "@/styles/global-variables.scss";'
       }
     }
   },
