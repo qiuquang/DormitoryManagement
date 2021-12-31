@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+</body>
+<style>
+  @media print {
+
+    html,
+    body {
+      height: auto !important;
+      padding: 10px;
+      font-size: 10px;
+      background-color: #fff !important;
+    }
+
+    .app-main {
+      background-color: #fff !important;
+    }
+
+    #printArea {
+      display: flex;
+      width: 862px;
+      flex-direction: column;
+    }
+
+    .commonPrint {
+      display: flex;
+      margin-top: 10px;
+      page-break-after: always;
+      page-break-before: always;
+    }
+
+    .printLeft {
+      text-align: center;
+      width: 50%;
+    }
+
+    .printRight {
+      padding-left: 10px;
+      text-align: center;
+      width: 50%;
+    }
+
+    .printLeftTitle {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @page {
+    /* 打印A4大小 */
+    size: auto A4 landscape;
+    margin: 0mm;
+  }
+
+</style>
+
+</html>

@@ -112,7 +112,9 @@ export const asyncRoutes = [
     path: '/cleanRecord',
     component: Layout,
     meta: {
-      roles: ['student']
+      title: '打扫记录',
+      roles: ['student'],
+      icon: 'theme'
     },
     children: [
       {
@@ -121,6 +123,15 @@ export const asyncRoutes = [
         name: 'cleanRecord',
         meta: {
           title: '打扫记录',
+          icon: 'theme'
+        }
+      },
+      {
+        path: 'printPage',
+        component: () => import('@/views/clean-record/printPage'),
+        name: 'printPage',
+        meta: {
+          title: '打印demo',
           icon: 'theme'
         }
       }
